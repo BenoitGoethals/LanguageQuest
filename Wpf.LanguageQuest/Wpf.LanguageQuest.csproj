@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\MainModel.cs" />
+    <Compile Include="view\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +70,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="view\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -95,8 +103,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="utils\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="view\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryDal.LanguageQuest\ClassLibraryDal.LanguageQuest.csproj">
+      <Project>{cc380b4d-de86-4844-ac8a-415636702145}</Project>
+      <Name>ClassLibraryDal.LanguageQuest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryService.LanguageQuest\ClassLibraryService.LanguageQuest.csproj">
+      <Project>{ceadb86f-3887-4f3a-896e-0b23a83188d2}</Project>
+      <Name>ClassLibraryService.LanguageQuest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
